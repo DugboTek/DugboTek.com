@@ -14,7 +14,12 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth,window.innerHeight);
-camera.position.setZ(30);
+camera.position.setZ(4);
+camera.position.setX(20);
+camera.position.setY(16);
+
+
+
 
 renderer.render(scene,camera);
 
@@ -32,7 +37,7 @@ scene.add(ambientLight);
 
 const lightHelper = new THREE.PointLightHelper(pointLight);
 const gridHelper = new THREE.GridHelper(200,50);
-//scene.add(gridHelper,lightHelper);
+scene.add(gridHelper);
 
 const controls = new OrbitControls(camera,renderer.domElement)
 
@@ -42,8 +47,12 @@ var iphoneMesh = new THREE.Object3D();
 loaderGLTf.load("scene.gltf",function(gltf){
   iphoneMesh = gltf.scene;
   iphoneMesh.scale.multiplyScalar( 5 );
+  iphoneMesh.position.setZ(-5);
+  iphoneMesh.position.setX(4);
+  iphoneMesh.position.setY(5);
   scene.add(gltf.scene);
 });
+
 
 
 
@@ -76,9 +85,12 @@ scene.add(light4 );
 function animate()
 {
   requestAnimationFrame(animate);
-  
+  const r = Date.now() * 0.0005;
   iphoneMesh.rotation.x += 0.001;
-  iphoneMesh.rotation.y += 0.001;
+  iphoneMesh.rotation.z += 0.002;
+
+  camera.fov = 45 + 30 * Math.sin( 0.05 * r );
+	camera.updateProjectionMatrix();
 
   init();
 
@@ -143,6 +155,8 @@ function renderLights() {
 }
 
 animate();
+
+window.addEventListener( 'resize', onWindowResize );
 
 
 
