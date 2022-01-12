@@ -27,6 +27,7 @@ main{
   z-index: 2;
   display: grid;
   grid-template-rows: 1fr 1fr;
+  justify-content: center;
 }
 
 .headerContainer{
@@ -41,19 +42,21 @@ background: white;
 }
 
 .introContainer h1{
-  font-size:10fr;
+  font-size:3vw;
   padding: 1fr 1fr 1fr 1fr;
   color: white;
   margin-left: 100px;
-
+  letter-spacing: 20px;
   font-family: 'Raleway', sans-serif;
 }
 
 .introContainer h2{
-  font-size:1fr;
-  padding: 1fr 1fr 1fr 1fr;
+  font-size:1.2vw;
   color: white;
   margin-left: 100px;
+  padding-top: 15px;
+  letter-spacing: 7px;
+  text-align: center;
   
   font-family: 'Raleway', sans-serif;
 }
@@ -296,64 +299,166 @@ background: white;
 
 
 .examplesContainer{
-  display: flex;
-  background-color: rgba(255, 255, 255, .15);  
-  backdrop-filter: blur(5px);  width: 100vw;
-  height: 500px;
+ 
+  height: 600px;
   display: grid;
   margin-left:20px;
   margin-right: 20px;
-  opacity: .95;
-  border-radius: 60px;
+  width: 90vw;
+  /* From https://css.glass */
+  background: rgba(178, 178, 178, 0.27);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.8px);
+  -webkit-backdrop-filter: blur(5.8px);
+  border: 1px solid rgba(178, 178, 178, 1);
 }
 
 .textContainer{
   display: flex;
   font-family: 'Courier New', Courier, monospace;
   margin-top: 50px;
-  width: 100vw;
+  width: 90vw;
   height:max-content;
-  background-color:black;
 }
 
 .textContainer h1{
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Sora', sans-serif;
   color:white;
-  background-color: black;
   font-size: 5em;
+
 }
 
 .textContainer::before{
   content: "<div>";
-  padding-top: 50px;
-  background-color: black;
-  margin-left: 30px;
+  padding-top: 40px;
+  margin-left: 20px;
 
-  font-size:2em;
+  font-size:3em;
   color:darkturquoise;
 }
 
 .textContainer::after{
-  background-color: black;
   content: "<div>";
-  padding-top: 50px;
-  padding-left: 10px;
-  font-size:2em;
+  padding-top: 40px;
+  padding-left: 20px;
+  font-size:3em;
   color:darkturquoise;
 
   
 }
 
 .displayContainer{
-  width:auto;
-  height:max-content;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 15px;
-}
+    width:90vw;
+    position: relative;
+    height: max-content;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-left: 200px;
+  }
+
 
 .gallery__img {
   width: 300px;
   height: 200px;
-  object-fit: fill;
+  object-fit:scale-down;
+}
+
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  position: relative;
+ /* From https://css.glass */
+background: rgba(178, 178, 178, 0.952);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5.8px);
+-webkit-backdrop-filter: blur(5.8px);
+border: 1px solid rgba(178, 178, 178, 1);
+  border-radius: 10px;
+  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+  opacity: 1;
+}
+
+.testimonialBox {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  padding: 40px;
+  color:black;
+  font-weight: 500;
+  text-align: center;
+  justify-content: center;
+  
+}
+
+.testimonialBox .logo {
+  background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center center;
+  max-width:230px;
+  max-height:200px;
+  width: auto;
+  height: auto;
+}
+
+.testimonialBox .details {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.testimonialBox .details .imgBx {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+.testimonialBox .details .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.testimonialBox .details h3 {
+  position: relative;
+
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: white;
+  line-height: 1.1em;
+}
+.testimonialBox .details h3 span {
+  font-size: 12px;
+  color: gray;
+}
+
+.swiper-container {
+  width: 100%;
+  padding-top: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 350px;
+}
+
+.swiper-slide img {
+  width: 100%;
 }

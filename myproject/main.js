@@ -2,7 +2,7 @@ import './style.css'
 
 import * as THREE from 'three';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
-import{GLTFLoader} from "./GLTFLoader.js";
+import{GLTFLoader} from './GLTFLoader.js';
 import { Loader } from './three.module.js';
 
 
@@ -85,6 +85,7 @@ scene.add(light4 );
 function animate()
 {
   requestAnimationFrame(animate);
+
   const r = Date.now() * 0.0005;
   iphoneMesh.rotation.x += 0.001;
   iphoneMesh.rotation.z += 0.002;

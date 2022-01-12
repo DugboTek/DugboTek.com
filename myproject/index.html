@@ -7,6 +7,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <title>DugboTek</title>
   </head>
   <body>
@@ -51,17 +52,92 @@
       </div>
       <p>Frontend</p>
       <div class="displayContainer">
-        <figure class= "gallery__item gallery__item--1">
-        </figure>
-        <figure class= "gallery__item gallery__item--2">
-          <img src="./images/nodejslogo.png" class="gallery__img">
-        </figure>
-        <figure class="gallery__item gallery__item--3">
-          <img src="./images/htmllogo.png" class="gallery__img">
-        </figure>
-        <figure class="gallery__item gallery__item--4">
-          <img src="./images/csslogo.png" class="gallery__img">
-        </figure>
+        <div class="swiper-container mySwiper">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="testimonialBox">
+                    <img src="images/csslogo.png" class = "logo" >
+                </div>
+              </div>
+              <div class="swiper-slide">
+                  <div class="testimonialBox">
+                      <img src="images/nodejslogo.png" class = "logo">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="testimonialBox">
+                      <img src="images/threejslogo.png" class = "logo" >
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="testimonialBox">
+                      <img src="images/html5logo.svg" class = "logo" >
+                  </div>
+                </div>
+                <style>
+                  html,
+                  body {
+                    position: relative;
+                    height: 100%;
+                  }
+            
+                  body {
+                    background: #fff;
+                    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+                    font-size: 14px;
+                    color: #000;
+                    margin: 0;
+                    padding: 0;
+                  }
+            
+                  .swiper-container {
+                    width: 100%;
+                    padding-top: 50px;
+                    padding-bottom: 50px;
+                  }
+            
+                  .swiper-slide {
+                    background-position: center;
+                    background-size: cover;
+                    width: 300px;
+                    height: 300px;
+                  }
+            
+              
+                </style>
+          </div>
+      </div>
+  
+    
+        <!-- Swiper JS -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+        <!-- Initialize Swiper -->
+        <script>
+          var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            roundLengths:true,
+            loop: false,
+            loopAdditionalSlides: 10,
+            slidesPerView: "4",
+            initialSlide: 2,
+            coverflowEffect: {
+              rotate: 25,
+              stretch: 0,
+              depth: 100,
+              modifier: 1,
+              slideShadows: true,
+          
+            },
+            observer: true,
+            observeParents: true,
+            pagination: {
+              el: ".swiper-pagination",
+            },
+          });
+        </script>
       </div>
     </div>
     </main>
@@ -70,7 +146,7 @@
     </canvas>
     <script type="module" src="/main.js"></script>
     <script src ="three.js"></script>
-    <script type ="module" src="GLTFLoader.js"></script>
+    <script type ="module" src="/GLTFLoader.js"></script>
    
     
   </body>
