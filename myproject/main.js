@@ -157,7 +157,102 @@ function renderLights() {
 
 animate();
 
-window.addEventListener( 'resize', onWindowResize );
+const menu = document.querySelector('#mobile-menu');
+const menuLinks = document.querySelector('.navbar__menu');
+const navLogo = document.querySelector('.navbar__logo');
+//const mainContent = document.querySelector('.main__content');
+//const stickyBar = document.querySelector('.sticky-bar')
+let lastScroll = 0;
+
+
+
+// Display Mobile 
+const mobileMenu = () =>{
+    menu.classList.toggle('is-active');
+    menuLinks.classList.toggle('active');
+}
+
+menu.addEventListener('click', mobileMenu); 
+
+//window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  scrollpx = document.body.scrollTop;
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    document.getElementById("container--2").style.backgroundColor="red";
+  } else {
+    document.getElementById("container--2").style.filter="blur(10px)";
+  }
+}
+
+/*
+const Consultation = ()=>{
+    const barWide = document.querySelector('.sticky-barWide')
+    const barShort = document.querySelector('.sticky-barShort')
+    let scrollPos = window.scrollY;
+
+    if(scrollPos < 1000){
+         mainContent.classList.add('sticky-barWide');
+         mainContent.classList.remove('sticky-barShort');
+         return
+     }
+    if(scrollPos > 1000){
+        mainContent.classList.remove('sticky-barWide');
+        mainContent.classList.add('sticky-barShort');
+        return
+    }
+}*/
+
+// Show active menu when scrolling
+const highlightMenu = ()=> {
+    const elem = document.querySelector('.highlight');
+    const homeMenu = document.querySelector('#home-page');
+    const aboutMenu = document.querySelector('#about-page');
+    const servicesMenu = document.querySelector('#services-page');
+    let scrollPos = window.scrollY;
+
+    // adds the 'highlight' class to the menu itesm
+    if(window.innerWidth > 960 && scrollPos < 600){
+        homeMenu.classList.add('highlight');
+        aboutMenu.classList.remove('highlight');
+        return
+    }
+
+    else if(window.innerWidth > 960 && scrollPos < 1388){
+        aboutMenu.classList.add('highlight');
+        homeMenu.classList.remove('highlight');
+        servicesMenu.classList.remove('highlight');
+        return
+    }
+    else if(window.innerWidth > 960 && scrollPos < 2345){
+        servicesMenu.classList.add('highlight');
+        aboutMenu.classList.remove('highlight');
+        homeMenu.classList.remove('highlight');
+        return
+    }
+
+    if((elem && window.innerWidth<960 && scrollPos <600) || elm){
+        elm.classList.remove('highlight');
+    } 
+}
+
+window.addEventListener('scroll',highlightMenu);
+window.addEventListener('scroll', Consultation);
+window.addEventListener('click',highlightMenu);
+
+//close mobile menu
+const hideMobileMenu = ()=>{
+    const menuBars = document.querySelector('is-active');
+    if(window.innerWidth <= 768 && menuBars);
+    menu.classList.toggle('is-active');
+    menuLinks.classList.remove('active');
+}
+
+
+menuLinks.addEventListener('click', hideMobileMenu);
+navLogo.addEventListener('click', hideMobileMenu);
+
+//window.addEventListener( 'resize', onWindowResize );
 
 
 

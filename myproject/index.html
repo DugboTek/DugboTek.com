@@ -8,6 +8,7 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
     <title>DugboTek</title>
   </head>
   <body>
@@ -42,6 +43,8 @@
       </nav>
     </header>
     <main>
+
+    
     <div class="introContainer">
       <h1>SOLA DUGBO</h1>
       <h2>Seeking innovation since 2002</h2>
@@ -50,7 +53,6 @@
       <div class="textContainer">
         <h1>Web Development</h1>
       </div>
-      <p>Frontend</p>
       <div class="displayContainer">
         <div class="swiper-container mySwiper">
           <div class="swiper-wrapper">
@@ -121,14 +123,14 @@
             roundLengths:true,
             loop: false,
             loopAdditionalSlides: 10,
-            slidesPerView: "4",
-            initialSlide: 2,
+            slidesPerView: "5",
+            initialSlide: 1,
             coverflowEffect: {
               rotate: 25,
               stretch: 0,
               depth: 100,
               modifier: 1,
-              slideShadows: true,
+              slideShadows: false,
           
             },
             observer: true,
@@ -140,7 +142,35 @@
         </script>
       </div>
     </div>
+
+
+    <div class="aboutSection">
+      <div class="aboutTextContainer">
+        <div class="aboutContainer">
+          <div class="innerText">
+            <div class="top">
+              <h1>About Sola</h1>
+            </div>
+            <div class="paragraph">
+              <p>
+                All my life I have strived to gain the most out of understanding and learning from mistakes.
+                 I find that not only learning from others but also self-analysis is important for growth.
+                 I find my passion for helping others through robotics and I am continuing that dream at 
+                 Villanova University studying Computer Engineering.
+              </p>
+              <p2> "If you want something you've 
+                never had,you have to do something you've never done."</p2>
+            </div>
+            
+          </div>
+          <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="sola-dugbo-8955a31a6" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/sola-dugbo-8955a31a6?trk=profile-badge"></a></div>       
+
+        </div>
+      </div>
+    </div>
+
     </main>
+
     <div id="app"></div>
     <canvas id = "bg">
     </canvas>

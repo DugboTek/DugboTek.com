@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   font-family: "Kumbh Sans", sans-serif;
-  
   scroll-behavior: smooth;
 }
 
@@ -12,8 +11,8 @@ canvas {
   top:0;
   left:0;
   z-index: 1;
-  width:100%;
-  height:100;
+  width:inherit;
+  height:100vh;
 }
 
 main{
@@ -26,7 +25,8 @@ main{
   padding: 120px 0px;
   z-index: 2;
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 100px;
   justify-content: center;
 }
 
@@ -39,7 +39,20 @@ background: white;
   flex-direction: column;
   height: 50vh;
   width: 50vw;
+  animation-duration:3s;
+  animation-name:fadein;
+  animation-iteration-count: 1;
 }
+
+@keyframes fadein{
+  from{
+    filter:blur(10px);
+    }
+  to{
+    filter:blur(0px);
+  }
+}
+
 
 .introContainer h1{
   font-size:3vw;
@@ -294,7 +307,7 @@ background: white;
 }
 
 .highlight {
-  border-bottom: 4px solid rgb(132, 0, 255);
+  border-bottom: 4px solid rgb(0, 0, 0);
 }
 
 
@@ -305,13 +318,13 @@ background: white;
   margin-left:20px;
   margin-right: 20px;
   width: 90vw;
-  /* From https://css.glass */
-  background: rgba(178, 178, 178, 0.27);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5.8px);
-  -webkit-backdrop-filter: blur(5.8px);
-  border: 1px solid rgba(178, 178, 178, 1);
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.09);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(11.7px);
+-webkit-backdrop-filter: blur(11.7px);
+border: 1px solid rgba(255, 255, 255, 1);
 }
 
 .textContainer{
@@ -320,6 +333,7 @@ background: white;
   margin-top: 50px;
   width: 90vw;
   height:max-content;
+  justify-content:center;
 }
 
 .textContainer h1{
@@ -344,27 +358,17 @@ background: white;
   padding-left: 20px;
   font-size:3em;
   color:darkturquoise;
-
-  
 }
 
 .displayContainer{
-    width:90vw;
     position: relative;
     height: max-content;
-    width: 100%;
+    width: inherit;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-left: 200px;
   }
 
-
-.gallery__img {
-  width: 300px;
-  height: 200px;
-  object-fit:scale-down;
-}
 
 
 .swiper-container {
@@ -375,15 +379,14 @@ background: white;
 .swiper-slide {
   position: relative;
  /* From https://css.glass */
-background: rgba(178, 178, 178, 0.952);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5.8px);
--webkit-backdrop-filter: blur(5.8px);
-border: 1px solid rgba(178, 178, 178, 1);
-  border-radius: 10px;
+  background: rgb(255, 255, 255);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.8px);
+  -webkit-backdrop-filter: blur(5.8px);
+  border: 1px solid rgba(178, 178, 178, 1);
+  border-radius: 50px;
   box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
-  opacity: 1;
 }
 
 .testimonialBox {
@@ -399,14 +402,22 @@ border: 1px solid rgba(178, 178, 178, 1);
   
 }
 
+.swiper-wrapper{
+  position:relative;
+  width:100px;
+  height:100%;
+
+}
+
 .testimonialBox .logo {
   background-size: cover;
    background-repeat: no-repeat;
    background-position: center center;
-  max-width:230px;
-  max-height:200px;
+  max-width:250px;
+  max-height:170px;
   width: auto;
   height: auto;
+  margin-top: 20px;
 }
 
 .testimonialBox .details {
@@ -461,4 +472,97 @@ border: 1px solid rgba(178, 178, 178, 1);
 
 .swiper-slide img {
   width: 100%;
+}
+
+.headshotImg{
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100px;
+  height:100px;
+}
+
+
+.aboutTextContainer{
+  position: relative;
+  display: flex;
+  flex-direction:column;
+  height: 600px;
+  margin-left:20px;
+  align-items: center;
+  margin-right: 20px;
+  justify-content:center;
+  width: 90vw;
+/* From https://css.glass */
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11.7px);
+  -webkit-backdrop-filter: blur(11.7px);
+  border: 1px solid rgba(255, 255, 255, 1);
+}
+
+.aboutContainer{
+  display:grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 5vw;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  height:100%;
+}
+
+
+.aboutContainer p{
+  font-family: 'Sora', sans-serif;
+  font-size: 2em;
+  line-height: 35px;
+  text-indent: 50px;
+  text-align: left;
+}
+
+.innerText{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  margin-left: 50px;
+  border-radius: 20px;
+
+  /* From https://css.glass */
+/* From https://css.glass */
+background: rgb(0, 0, 0);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+}
+
+.paragraph p2{
+  font-family: 'Sora', sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 20px 0px 0px 0px;
+  text-align: center;
+}
+
+.top{
+  display: flex;
+  align-items: center;
+  width:100%;
+  height:80px;
+  background-color:#38434F;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.paragraph{
+  padding: 30px 50px 50px 50px;
+  display:flex;
+  flex-direction: column;
+}
+
+.top h1{
+  font-family: 'Sora', sans-serif;
+  font-size: 3rem;
+  padding-left: 50px;
 }
