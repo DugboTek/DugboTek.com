@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  <meta charset=UTF-8>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
   </style> 
@@ -12,10 +13,14 @@
     <title>DugboTek</title>
   </head>
   <body>
+    <div class="mobile">
+      <div class="blurContainer">
+        <h1>For best viewing use desktop browser</h1>
+      </div>
+    </div>
     <header>
       <nav class="navbar">
         <div class="navbar__logo" >
-          <img src="images\JaneHeadLogoPNG.png" alt="">
           <a href="#home"></a>
         </div>
           <div class="navbar__container">
@@ -169,7 +174,114 @@
       </div>
     </div>
 
+    <div class="glassContainer">
+      <div class="languagesSection">
+        <div class="glassHeader">
+        <h1>Languages</h1>
+        </div>
+        <div class="displayContainer">
+
+          <div class="swiper-container mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="testimonialBox">
+                      <img src="images/clogo.png" class = "logo" >
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testimonialBox">
+                        <img src="images/javascriptlogo.png" class = "logo">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="testimonialBox">
+                        <img src="images/c++logo.png" class = "logo" >
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="testimonialBox">
+                        <img src="images/html5logo.svg" class = "logo" >
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="testimonialBox">
+                        <img src="images/javalogo.png" class = "logo" >
+                    </div>
+                  </div>
+                  <style>
+                    html,
+                    body {
+                      position: relative;
+                      height: 100%;
+                    }
+              
+                    body {
+                      background: #fff;
+                      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+                      font-size: 14px;
+                      color: #000;
+                      margin: 0;
+                      padding: 0;
+                    }
+              
+                    .swiper-container {
+                      width: 100%;
+                      padding-top: 50px;
+                      padding-bottom: 50px;
+                    }
+              
+                    .swiper-slide {
+                      background-position: center;
+                      background-size: cover;
+                      width: 300px;
+                      height: 300px;
+                    }
+              
+                
+                  </style>
+            </div>
+        </div>
+    
+      
+          <!-- Swiper JS -->
+          <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+      
+          <!-- Initialize Swiper -->
+          <script>
+            var swiper = new Swiper(".mySwiper", {
+              effect: "coverflow",
+              grabCursor: true,
+              centeredSlides: true,
+              roundLengths:true,
+              loop: false,
+              loopAdditionalSlides: 10,
+              slidesPerView: "5",
+              initialSlide: 2,
+              coverflowEffect: {
+                rotate: 25,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: false,
+            
+              },
+              observer: true,
+              observeParents: true,
+              pagination: {
+                el: ".swiper-pagination",
+              },
+            });
+          </script>
+        </div>
+
+        </div>
+        
+      </div>
+
+
     </main>
+
+    
 
     <div id="app"></div>
     <canvas id = "bg">

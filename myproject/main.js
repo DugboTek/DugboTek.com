@@ -81,12 +81,13 @@ light4.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xffaa
 scene.add(light4 );
  
 
+var r;
 
 function animate()
 {
   requestAnimationFrame(animate);
 
-  const r = Date.now() * 0.0005;
+  r  = Date.now() * 0.0005;
   iphoneMesh.rotation.x += 0.001;
   iphoneMesh.rotation.z += 0.002;
 
@@ -232,12 +233,12 @@ const highlightMenu = ()=> {
     }
 
     if((elem && window.innerWidth<960 && scrollPos <600) || elm){
-        elm.classList.remove('highlight');
+        elem.classList.remove('highlight');
     } 
 }
 
 window.addEventListener('scroll',highlightMenu);
-window.addEventListener('scroll', Consultation);
+//window.addEventListener('scroll', Consultation);
 window.addEventListener('click',highlightMenu);
 
 //close mobile menu
