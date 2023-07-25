@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", ()=> {
 				availableSpaceEl = document.getElementById(String(availableSpace))
 				
 				availableSpace = availableSpace+1;
-	
 				availableSpaceEl.textContent= letter;
+				availableSpace.classList.add(hover);
 			}
 		}
 		else if(direction === "sub"){
@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
 			let square = document.createElement("div");
 			square.classList.add("square");
 			square.setAttribute("id",index +1);
+			square.classList.add("hvr-buzz-out");
 			gameBoard.appendChild(square);
 		}
 	}
@@ -70,36 +71,41 @@ document.addEventListener("DOMContentLoaded", ()=> {
 			if(word.includes(letter)){
 				if(word.substring(i,i+1)===letter){
 					var greenWord = document.getElementById(String(i+1+rowOffset))
-					greenWord.style.backgroundColor = "green";
+					greenWord.style.backgroundColor = "#538D4E";
+
 
 					var greenLetter = document.querySelector('[data-key="'+letter+'"]')
-					greenLetter.style.backgroundColor ="green";
+					greenLetter.style.backgroundColor ="#538D4E";
 				}
 				else{
 					var yellowWord = document.getElementById(String(i+1+rowOffset))
-					yellowWord.style.backgroundColor = "#e9c601";
+					yellowWord.style.backgroundColor = "#B59F3B";
+					yellowWord.classList.add("buzz");
+
 
 					var yellowLetter = document.querySelector('[data-key="'+letter+'"]')
-					yellowLetter.style.backgroundColor ="#e9c601";
+					yellowLetter.style.backgroundColor ="#B59F3B";
+					yellowLetter.classList.add("buzz");
+
 				}			
 			}
 			else{
 				var grayWord = document.getElementById(String(i+1+rowOffset))
-				grayWord.style.backgroundColor = "gray";
+				grayWord.style.backgroundColor = "#3A3A3C";
 				
 				var grayLetter = document.querySelector('[data-key="'+letter+'"]')
-				grayLetter.style.backgroundColor ="gray";
+				grayLetter.style.backgroundColor ="#3A3A3C";
 			}
 			
 		}
 		//checks word
 		if(currentWord === word)
 		{
-			window.alert("congrats u won bruh")
+			window.alert("Congrats u won! You should hire me!")
 		}
 
 		if (guessedWords.length === 6) {
-			window.alert("Sorry, you have no more guess the word is "+ word)
+			window.alert("Sorry, you have no more guesses, better luck next time")
 			
 		}
 		guessedWords.push([]);
